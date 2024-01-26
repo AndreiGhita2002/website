@@ -13,15 +13,21 @@
 }
 
 body {
-    /*background-color: var(--background);*/
+    margin: 0;
     font-family: "JetBrains Mono", sans-serif;
 }
 
-.HomePage {
-    margin: auto;
-    width: 70%;
-    background-color: var(--background);
-    /*display: grid;*/
+.EmptySpace {
+    height: 85dvh;
+}
+
+.ForeGround {
+    display: flex;
+    flex-direction: column;
+}
+
+.ColumnContainer {
+    background-color: transparent;
 }
 
 .CardColumn {
@@ -31,10 +37,6 @@ body {
     flex-wrap: wrap;
     justify-content: safe center;
     align-content: flex-start;
-    margin: auto;
-    width: 49%;
-    /*border: 3px solid aquamarine;*/
-    /*padding: 10px;*/
 }
 
 .MainColumn {
@@ -58,7 +60,7 @@ body {
 
 .TitleText {
     text-align: center;
-    /*color: var(--secondary);*/
+    /*height: 10dvh;*/
     padding-left: 0.8em;
     padding-right: 0.8em;
     font-family: "Comfortaa", sans-serif;
@@ -80,4 +82,13 @@ body {
     padding: 0.5em;
 }
 
+.CanvasContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+    /*background-color: #0e080b;*/
+}
 

@@ -3,11 +3,17 @@ import './styles/index.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {createRoot} from "react-dom/client";
 import {HomePage} from "./components/HomePage";
+import {BackgroundCanvas} from "./components/Planets";
 
 const router = createBrowserRouter([
     {
         path: '',
-        element: <HomePage />
+        element: (
+            <div>
+                <HomePage />
+                <BackgroundCanvas />
+            </div>
+        )
     },
 ]);
 
