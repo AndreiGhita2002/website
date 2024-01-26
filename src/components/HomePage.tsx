@@ -4,46 +4,49 @@ import React from "react";
 export function HomePage() {
     return (
         <div className='ForeGround'>
-            <div className='EmptySpace'></div>
-            <div className='ColumnContainer'>
-                <CardColumn className='MainColumn'>
+            <div className='hero'>
+                <div className='top'>
+                    <CardColumn className='SideColumn'>
+                        <TextCard>
+                            <p className='ContactText'>
+                                CONTACT INFO: <br/>
+                                email <br/>
+                                discord <br/>
+                                other <br/>
+                            </p>
+                        </TextCard>
+                        <TextCard>
+                            <p className='PalsText'>
+                                pals
+                            </p>
+                        </TextCard>
+                    </CardColumn>
+                </div>
+                <div className='bottom'>
                     <TextCard>
                         <h1 className='TitleText'>
                             ANDREI IULIU GHITA
                         </h1>
                     </TextCard>
-                    <TextCard>
-                        <p className='MainText'>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
-                            dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
-                            voluptatem voluptates voluptatum! Exercitationem?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
-                            dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
-                            voluptatem voluptates voluptatum! Exercitationem?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
-                            dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
-                            voluptatem voluptates voluptatum! Exercitationem?
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
-                            dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
-                            voluptatem voluptates voluptatum! Exercitationem?
-                        </p>
-                    </TextCard>
-                </CardColumn>
-                <CardColumn className='SideColumn'>
-                    <TextCard>
-                        <p className='ContactText'>
-                            CONTACT INFO: <br/>
-                            email <br/>
-                            discord <br/>
-                            other <br/>
-                        </p>
-                    </TextCard>
-                    <TextCard>
-                        <p className='PalsText'>
-                            pals
-                        </p>
-                    </TextCard>
-                </CardColumn>
+                </div>
+            </div>
+            <div className="content">
+                <TextCard>
+                    <p className='MainText'>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
+                        dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
+                        voluptatem voluptates voluptatum! Exercitationem?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
+                        dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
+                        voluptatem voluptates voluptatum! Exercitationem?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
+                        dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
+                        voluptatem voluptates voluptatum! Exercitationem?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
+                        dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
+                        voluptatem voluptates voluptatum! Exercitationem?
+                    </p>
+                </TextCard>
             </div>
         </div>
     )

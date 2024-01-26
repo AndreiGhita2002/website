@@ -17,10 +17,6 @@ body {
     font-family: "JetBrains Mono", sans-serif;
 }
 
-.EmptySpace {
-    height: 85dvh;
-}
-
 .ForeGround {
     display: flex;
     flex-direction: column;
@@ -83,7 +79,7 @@ body {
 }
 
 .CanvasContainer {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -100;
@@ -92,3 +88,21 @@ body {
     /*background-color: #0e080b;*/
 }
 
+.hero {
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
