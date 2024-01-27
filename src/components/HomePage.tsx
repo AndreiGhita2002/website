@@ -33,18 +33,9 @@ export function HomePage() {
             <div className="content">
                 <TextCard>
                     <p className='MainText'>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
-                        dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
-                        voluptatem voluptates voluptatum! Exercitationem?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
-                        dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
-                        voluptatem voluptates voluptatum! Exercitationem?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
-                        dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
-                        voluptatem voluptates voluptatum! Exercitationem?
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, aspernatur blanditiis distinctio
-                        dolores eligendi est fuga illum ipsam modi nulla officiis praesentium quidem repellendus vel voluptas
-                        voluptatem voluptates voluptatum! Exercitationem?
+                        hi <br/>
+                        i'm a 3rd year compsci student. <br/>
+                        i like graphics programming, data science, and (sometimes) web development. <br/>
                     </p>
                 </TextCard>
             </div>
