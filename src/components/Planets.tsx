@@ -12,10 +12,11 @@ interface StarProps {
     colorMap?: Texture
     orbitRadius?: number,
     rotSpeed?: number,
+    emissiveMap?: Texture,
 }
 
 function Star(
-    {position=[0, 0, 0], sphere_args=[2, 32, 32], colorMap, rotSpeed=0.1}: StarProps
+    {position=[0, 0, 0], sphere_args=[2, 32, 32], colorMap, rotSpeed=0.1, emissiveMap}: StarProps
 ) {
     const meshRef: any = useRef();
     useFrame((_state, delta) => {
@@ -24,7 +25,13 @@ function Star(
     return (
         <mesh ref={meshRef} position={position}>
             <sphereGeometry args={sphere_args}/>
-            <meshStandardMaterial map={colorMap}/>
+            <meshStandardMaterial map={colorMap} emissive={'yellow'} emissiveMap={emissiveMap} emissiveIntensity={7}/>
+            <pointLight
+                color={'yellow'}
+                intensity={5.0}
+                distance={0}
+                decay={0.5}
+            />
         </mesh>
     );
 }
@@ -70,15 +77,22 @@ export function Camera() {
 }
 
 export function BackgroundCanvas() {
-    const colorMap = useLoader(TextureLoader, 'PavingStones092_1K-PNG_Color.png');
+    const bricks = useLoader(TextureLoader, 'PavingStones092_1K-PNG_Color.png');
+    const sun = useLoader(TextureLoader, 'planets/2k_sun.jpg');
+    const mercury = useLoader(TextureLoader, 'planets/2k_mercury.jpg');
+    const venus = useLoader(TextureLoader, 'planets/2k_venus_surface.jpg');
+    const jupiter = useLoader(TextureLoader, 'planets/2k_jupiter.jpg');
     return (
         <div className="CanvasContainer">
             <Canvas>
                 <Camera/>
-                <Star colorMap={colorMap}/>
-                <Planet colorMap={colorMap} orbitRadius={6}/>
-                <ambientLight intensity={1.0}/>
-                <directionalLight color="red" position={[0, 5, 0]}/>
+                <Star colorMap={sun} sphere_args={[1, 32, 32]} emissiveMap={sun}/>
+                <Planet colorMap={mercury} orbitRadius={6}  sphere_args={[0.3, 32, 32]}/>
+                <Planet colorMap={venus} orbitRadius={13} sphere_args={[0.4, 32, 32]}/>
+                <Planet colorMap={bricks} orbitRadius={19} sphere_args={[0.7, 32, 32]}/>
+                <Planet colorMap={jupiter} orbitRadius={24} sphere_args={[0.6, 32, 32]}/>
+                <ambientLight intensity={0.1}/>
+                {/*<directionalLight color="red" position={[0, 5, 0]}/>*/}
             </Canvas>
         </div>
     );
