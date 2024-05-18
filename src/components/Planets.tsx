@@ -76,7 +76,7 @@ export function Camera() {
     return <></>
 }
 
-export function BackgroundCanvas() {
+export function PlanetsCanvas() {
     const bricks = useLoader(TextureLoader, 'PavingStones092_1K-PNG_Color.png');
     const sun = useLoader(TextureLoader, 'planets/2k_sun.jpg');
     const mercury = useLoader(TextureLoader, 'planets/2k_mercury.jpg');
