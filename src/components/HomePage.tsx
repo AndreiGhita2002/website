@@ -9,15 +9,17 @@ export function HomePage() {
                     <CardColumn className='SideColumn'>
                         <TextCard>
                             <p className='ContactText'>
-                                CONTACT INFO: <br/>
-                                email <br/>
-                                discord <br/>
-                                other <br/>
+                                CONTACT: <br/>
+                                andrei.ghita2002@gmail.com <br/>
+                                <a href={"https://github.com/AndreiGhita2002"}>github.com/AndreiGhita2002</a> <br/>
                             </p>
                         </TextCard>
                         <TextCard>
                             <p className='PalsText'>
-                                pals
+                                Fraser <a href={"https://frasermiller.dev"}>frasermiller.dev</a> <br/>
+                                Nour <a href={"https://nourl.dev"}>nourl.dev</a> <br/>
+                                Ben <a href={"https://vyrz.dev"}>vyrz.dev</a> <br/>
+                                Luke <a href={"https://lukeormiston.com"}>lukeormiston.com</a> <br/>
                             </p>
                         </TextCard>
                     </CardColumn>
