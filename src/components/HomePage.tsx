@@ -1,4 +1,4 @@
-import '../styles/index.css'
+import '../styles/homePage.css'
 import React from "react";
 
 export function HomePage() {
