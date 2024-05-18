@@ -1,5 +1,4 @@
 import "../styles/basic.css"
-import {CardColumn} from "./HomePage";
 import React from "react";
 
 export function BasicPage() {
