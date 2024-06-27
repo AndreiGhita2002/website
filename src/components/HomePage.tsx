@@ -17,12 +17,15 @@ export function HomePage() {
 
                     Interests: graphics programming, data science, networks <br/>
 
+                    <br/>
+
                     I also like history, cooking, travel and politics. <br/>
                 </div>
                 <div className='right'>
                     <h3>Contact:</h3>
                     andrei.ghita2002@gmail.com <br/>
-                    <a href={"https://github.com/AndreiGhita2002"}>github.com/AndreiGhita2002</a> <br/>
+                    <a href={"https://github.com/AndreiGhita2002"}>github</a> <br/>
+                    <a href={"https://www.linkedin.com/in/andrei-iuliu-ghita-dev/"}>linkedin</a>
 
                     <h3>Pals:</h3>
                     Fraser <a href={"https://frasermiller.dev"}>frasermiller.dev</a> <br/>
