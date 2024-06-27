@@ -1,77 +1,34 @@
-import '../styles/homePage.css'
+import "../styles/homePage.css"
 import React from "react";
 
 export function HomePage() {
     return (
-        <div className='ForeGround'>
-            <div className='hero'>
-                <div className='top'>
-                    <CardColumn className='SideColumn'>
-                        <TextCard>
-                            <p className='ContactText'>
-                                CONTACT: <br/>
-                                andrei.ghita2002@gmail.com <br/>
-                                <a href={"https://github.com/AndreiGhita2002"}>github.com/AndreiGhita2002</a> <br/>
-                            </p>
-                        </TextCard>
-                        <TextCard>
-                            <p className='PalsText'>
-                                Fraser <a href={"https://frasermiller.dev"}>frasermiller.dev</a> <br/>
-                                Nour <a href={"https://nourl.dev"}>nourl.dev</a> <br/>
-                                Ben <a href={"https://vyrz.dev"}>vyrz.dev</a> <br/>
-                                Luke <a href={"https://lukeormiston.com"}>lukeormiston.com</a> <br/>
-                            </p>
-                        </TextCard>
-                    </CardColumn>
-                </div>
-                <div className='bottom'>
-                    <TextCard>
-                        <h1 className='TitleText'>
-                            ANDREI IULIU GHITA
-                        </h1>
-                    </TextCard>
-                </div>
-            </div>
-            <div className="content">
-                <TextCard>
-                    <p className='MainText'>
-                        hi <br/>
-                        i'm a 3rd year compsci student. <br/>
-                        i like graphics programming, data science, and (sometimes) web development. <br/>
-                    </p>
-                </TextCard>
-            </div>
-        </div>
-    )
-}
+        <div className='content'>
+            <img src='/nerdemoji.jpeg' alt='selfie'/>
 
+            <h1>Andrei's cave</h1>
 
-interface CardColumnProps {
-    children?: React.ReactNode,
-    className?: string,
-}
+            I like programming. <br/>
 
-export function CardColumn({children, className}: CardColumnProps) {
-    let cn = 'CardColumn'
-    if (className) {
-        cn += ' ' + className
-    }
-    return(
-        <div className={cn}>
-            {children}
-        </div>
-    )
-}
+            4th year university student at University of Glasgow <br/>
 
+            <br/>
 
-interface TextCardProps {
-    children?: React.ReactNode
-}
+            Interests: graphics programming, data science, networks <br/>
 
-export function TextCard({children}: TextCardProps) {
-    return (
-        <div className='TextCard'>
-            {children}
+            I also like history, cooking, travel and politics. <br/>
+
+            <h3>Contact:</h3>
+            andrei.ghita2002@gmail.com <br/>
+            <a href={"https://github.com/AndreiGhita2002"}>github.com/AndreiGhita2002</a> <br/>
+
+            <h3>Pals:</h3>
+            Fraser <a href={"https://frasermiller.dev"}>frasermiller.dev</a> <br/>
+            Nour <a href={"https://nourl.dev"}>nourl.dev</a> <br/>
+            Ben <a href={"https://vyrz.dev"}>vyrz.dev</a> <br/>
+            Luke <a href={"https://lukeormiston.com"}>lukeormiston.com</a> <br/>
+
+            <h4>-- a better version of this website is in the works --</h4>
         </div>
     )
 }

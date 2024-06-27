@@ -1,19 +1,19 @@
 import React from 'react';
-import './styles/basic.css';
+import './styles/homePage.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import {createRoot} from "react-dom/client";
-// import {HomePage} from "./components/HomePage";
+// import {OldHomePage} from "./components/OldHomePage";
 // import {PlanetsCanvas} from "./components/Planets";
-import {BasicPage} from "./components/BasicPage";
+import {HomePage} from "./components/HomePage";
 
 const router = createBrowserRouter([
     {
         path: '',
         element: (
             <div>
-                {/*<HomePage />*/}
+                {/*<OldHomePage />*/}
                 {/*<PlanetsCanvas />*/}
-                <BasicPage/>
+                <HomePage/>
             </div>
         )
     },
