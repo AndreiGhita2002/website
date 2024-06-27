@@ -7,7 +7,7 @@ export function HomePage() {
             <img src='/face.jpeg' alt='selfie' className='face'/>
             <div className='content'>
                 <div className='left'>
-                    <h1>Andrei's cave</h1>
+                    <h1>Andrei's Page</h1>
 
                     I like programming. <br/>
 
