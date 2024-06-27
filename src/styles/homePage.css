@@ -1,14 +1,47 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
 
 :root {
     --text: black;
     --background: white;
-    justify-content: safe center;
+    /*justify-content: safe center;*/
     font-family: "JetBrains Mono", sans-serif;
 }
 
-content {
+.centre {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+.face {
+    border: 5px solid;
+    width: 100%;
+    /*height: auto;*/
+    object-fit: fill;
+}
+
+.content {
+    width: 100%;
+    border: 5px solid;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+.left {
+    padding: 13px;
+}
+
+.right {
+    padding: 13px;
+}
+
+/*Fonts:*/
+
+h1 {
+    font-family: "Cinzel", "serif";
+}
+h3 {
+    font-family: "Quattrocento", "Cinzel", "serif";
 }
