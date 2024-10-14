@@ -19,7 +19,7 @@ export function HomePage() {
 
                     <br/>
 
-                    I also like history, cooking, travel and politics. <br/>
+                    I also like history, cooking, biking and hiking. <br/>
                 </div>
                 <div className='right'>
                     <h3>Contact:</h3>
