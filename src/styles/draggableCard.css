@@ -1,0 +1,36 @@
+.card {
+    width: 260px;
+    height: 370px; /* A4-ish */
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, height 0.25s ease;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.card-header {
+    padding: 12px;
+    color: white;
+    font-weight: 600;
+    cursor: grab;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-header:active {
+    cursor: grabbing;
+}
+
+.card-body {
+    padding: 14px;
+    color: #1e1e1e;
+    flex: 1;
+}
+
+/* Collapsed (inside tray) */
+.card--collapsed {
+    height: 64px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
