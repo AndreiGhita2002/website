@@ -3,7 +3,7 @@
     height: 370px; /* A4-ish */
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.25s ease, height 0.25s ease;
+    /*transition: transform 0.25s ease, height 0.25s ease;*/
     user-select: none;
     display: flex;
     flex-direction: column;

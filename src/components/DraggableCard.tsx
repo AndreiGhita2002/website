@@ -1,5 +1,5 @@
 import "../styles/draggableCard.css";
-import React, { useState } from "react";
+import React, {useRef, useState} from "react";
 import Draggable, { DraggableData, DraggableEvent } from "react-draggable";
 
 type DraggableCardProps = {
@@ -19,20 +19,23 @@ export function DraggableCard({
                                 bodyColor,
                                 defaultPosition,
                               }: DraggableCardProps) {
+
   const [isOverZone, setIsOverZone] = useState(false);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   function handleDrag(_: DraggableEvent, data: DraggableData) {
     const zone = dropZoneRef.current;
-    if (!zone) return;
+    const headerZone = headerRef.current;
+    if (!zone || !headerZone) return;
 
     const zoneRect = zone.getBoundingClientRect();
-    const cardRect = data.node.getBoundingClientRect();
+    const cardHeaderRect = headerZone.getBoundingClientRect();
 
     const inside =
-      cardRect.left < zoneRect.right &&
-      cardRect.right > zoneRect.left &&
-      cardRect.top < zoneRect.bottom &&
-      cardRect.bottom > zoneRect.top;
+      cardHeaderRect.left < zoneRect.right &&
+      cardHeaderRect.right > zoneRect.left &&
+      cardHeaderRect.top < zoneRect.bottom &&
+      cardHeaderRect.bottom > zoneRect.top;
 
     setIsOverZone(inside);
   }
@@ -50,6 +53,7 @@ export function DraggableCard({
         <div
           className="card-header"
           style={{ backgroundColor: headerColor }}
+          ref={headerRef}
         >
           {title}
         </div>
