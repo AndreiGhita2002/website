@@ -48,18 +48,16 @@ export function DraggableCard({
     >
       <div
         className={`card ${isOverZone ? "card--collapsed" : ""}`}
-        style={{ backgroundColor: bodyColor }}
+        style={{ backgroundColor: headerColor }}
       >
-        <div
-          className="card-header"
-          style={{ backgroundColor: headerColor }}
-          ref={headerRef}
-        >
+        <div className="card-header" ref={headerRef}>
           {title}
         </div>
 
         {!isOverZone && (
-          <div className="card-body">
+          <div className="card-body"
+               style={{ backgroundColor: bodyColor }}
+          >
             {children}
           </div>
         )}

@@ -1,6 +1,7 @@
 .card {
-    width: 260px;
-    height: 370px; /* A4-ish */
+    position: absolute;
+    width: clamp(200px, 30vw, 320px);
+    aspect-ratio: 210 / 297; /* true A4 */
     border-radius: 8px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     /*transition: transform 0.25s ease, height 0.25s ease;*/
@@ -30,7 +31,7 @@
 
 /* Collapsed (inside tray) */
 .card--collapsed {
-    height: 64px;
-    width: 200px;
+    width: clamp(40px, 6vw, 64px);
+    aspect-ratio: 210 / 297; /* true A4 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
