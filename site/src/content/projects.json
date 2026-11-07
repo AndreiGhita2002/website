@@ -144,7 +144,7 @@
     { "when": "2026", "title": "Workshop paper — Euro-Par 2026", "note": "ReactivePipe, from my Master's dissertation." },
     { "when": "2026", "title": "Research Internship", "note": "Helped build cutting edge environment detection software for the Meta Quest 3." },
     { "when": "2026", "title": "MSci Computing Science, University of Glasgow", "note": "Integrated Masters MSc + BSc. Achieved first degree (1:1) results." },
-    { "when": "2025", "title": "1st place, GUTS hackathon", "note": "Free to Book challenge, with plane-game." },
+    { "when": "2025", "title": "1st place, GUTS hackathon", "note": "Free to Book challenge, with plane-game." }
   ],
   "friends": [
     { "name": "Fraser", "href": "https://frasermiller.dev" },

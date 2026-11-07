@@ -31,7 +31,6 @@ Your name, the About section and friends' links are in the same file (`name`, `a
 
 Files to add to `site/public/assets/`:
 
-- [ ] `photo.jpg`: portrait, about 3:4. Then replace the `[PHOTO]` div in `App.tsx`; the replacement `<img>` is in a comment above it.
 - [ ] `Andrei-Ghita-CV.pdf`: the Download CV button already points here, so it's broken until the file exists.
 - [ ] `og.png`: the social preview image. The current file is a generated stand-in (1200×630).
 
@@ -44,4 +43,3 @@ In `site/src/content/projects.json`:
 - [ ] plane-game: `[ADD: what the game is, and what you built in the team]`
 - [ ] XR Pirate Purgatory: `[ADD: team size and what you were responsible for]`
 - [ ] neuro_arcade: `[ADD: what the platform does and your part in it]`
-- [ ] Timeline: `[YEARS]`, `[ADD: classification, key modules]`, `[YEAR]`, `[ADD: internship or role]`, `[ADD: one line on what you did]`

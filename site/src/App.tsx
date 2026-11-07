@@ -19,8 +19,7 @@ export function App() {
         <main id="main">
           <div className="column">
             <header id="intro" className="intro">
-              {/* Swap for <img className="photo" src="/assets/photo.jpg" alt="Portrait of Andrei Ghita" /> */}
-              <div className="photo">[PHOTO]</div>
+              <img className="photo" src="/assets/face.png" alt={`Portrait of ${name}`} width={168} height={224} />
               <div className="intro-text">
                 <p className="label">SYSTEMS &amp; ML INFRASTRUCTURE ENGINEER</p>
                 <h1>{name}</h1>
