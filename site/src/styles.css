@@ -168,8 +168,8 @@ section, header { scroll-margin-top: 24px; }
 .rail-link.is-passed .rail-num,
 .rail-link[aria-current] .rail-num { opacity: .75; }
 
-/* At full spacing the rail's labels and minimum segments need about 940px of height. */
-@media (max-height: 950px) {
+/* At full spacing the rail's labels and minimum segments need about 1086px of height. */
+@media (max-height: 1090px) {
   .rail { padding: 16px 0; }
   .seg { margin: 4px 0; min-height: 8px; }
   .seg--lead { flex-basis: 16px; min-height: 16px; }
@@ -177,7 +177,7 @@ section, header { scroll-margin-top: 24px; }
 }
 
 /* Below this not every label fits, so only the current one is spelled out. */
-@media (max-height: 775px) {
+@media (max-height: 895px) {
   .rail-link:not([aria-current]) .rail-name {
     position: absolute;
     width: 1px;
@@ -523,7 +523,7 @@ a.link:hover { color: var(--terracotta); }
 }
 
 /* Education & highlights -------------------------------------------------- */
-.path-label { margin-bottom: 24px; }
+.list-label { margin-bottom: 24px; }
 
 .tl-row {
   display: flex;
@@ -570,8 +570,17 @@ a.link:hover { color: var(--terracotta); }
   letter-spacing: -.02em;
 }
 
+/* Friends ----------------------------------------------------------------- */
+.friends {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  column-gap: 40px;
+}
+
+.friend-url { font-family: var(--mono); font-size: 13px; font-weight: 400; overflow-wrap: anywhere; text-align: right; }
+
 /* Small screens ----------------------------------------------------------- */
-@media (max-width: 760px), (max-height: 529px) {
+@media (max-width: 760px), (max-height: 579px) {
   .rail, .mirror { display: none; }
   .page { display: block; padding: 0; }
   main { padding: 48px 24px 96px; }

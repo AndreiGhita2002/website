@@ -1,9 +1,7 @@
 import { useEffect, useState, type CSSProperties } from 'react';
-import type { Project } from '../content';
+import { isPlaceholder, type Project } from '../content';
 
 const ANIMATION_MS = 220; // slightly longer than the 200ms CSS transition
-
-const isPlaceholder = (href: string) => /^\[.*\]$/.test(href);
 
 // Closing a row above the clicked one can push the clicked row off the top of the screen.
 function revealRow(id: string, always: boolean) {

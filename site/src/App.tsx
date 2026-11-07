@@ -1,6 +1,6 @@
 import { ProjectIndex } from './components/ProjectIndex';
 import { ScrollRail } from './components/ScrollRail';
-import { projects, timeline } from './content';
+import { about, friends, isPlaceholder, name, projects, timeline } from './content';
 
 export function App() {
   return (
@@ -23,7 +23,7 @@ export function App() {
               <div className="photo">[PHOTO]</div>
               <div className="intro-text">
                 <p className="label">SYSTEMS &amp; ML INFRASTRUCTURE ENGINEER</p>
-                <h1>Andrei Ghita</h1>
+                <h1>{name}</h1>
                 <p className="intro-line">
                   MSci Computing Science, University of Glasgow. I like making computers go fast.
                 </p>
@@ -37,16 +37,10 @@ export function App() {
 
             <section id="about" className="about">
               <p className="label">01 — ABOUT</p>
-              <h2>I build the layer between models and the metal.</h2>
-              <p className="prose">
-                I recently graduated with an Integrated Masters in Computing Science from the University of
-                Glasgow. My work sits in systems and GPU programming — C/C++, Rust, Vulkan, CUDA — and
-                increasingly in ML infrastructure: PyTorch pipeline optimisation and distributed inference.
-              </p>
-              <p className="prose">
-                Outside that I enjoy game-engine design, XR, and exploring how LLMs can give people new ways to
-                interact with software.
-              </p>
+              <h2>{about.heading}</h2>
+              {about.paragraphs.map((paragraph) => (
+                <p className="prose" key={paragraph}>{paragraph}</p>
+              ))}
             </section>
 
             <section id="projects">
@@ -61,7 +55,7 @@ export function App() {
             </section>
 
             <section id="path">
-              <h2 className="label path-label">03 — EDUCATION &amp; HIGHLIGHTS</h2>
+              <h2 className="label list-label">03 — EDUCATION &amp; HIGHLIGHTS</h2>
               <ol>
                 {timeline.map((entry) => (
                   <li className="tl-row" key={entry.title}>
@@ -81,6 +75,30 @@ export function App() {
                 <h2>Open to systems and ML-infra roles.</h2>
               </div>
               <a className="btn btn-dark" href="mailto:andrei.ghita2002@gmail.com">andrei.ghita2002@gmail.com</a>
+            </section>
+
+            <section id="friends">
+              <h2 className="label list-label">05 — FRIENDS</h2>
+              <ul className="friends">
+                {friends.map((friend) => (
+                  <li key={friend.name}>
+                    {isPlaceholder(friend.href) ? (
+                      <span className="link">
+                        {friend.name}
+                        <span className="link-pending">{friend.href}</span>
+                      </span>
+                    ) : (
+                      <a className="link" href={friend.href}>
+                        {friend.name}
+                        <span className="friend-url">
+                          {friend.href.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                          <span aria-hidden="true"> ↗</span>
+                        </span>
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </section>
           </div>
         </main>

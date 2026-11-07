@@ -6,6 +6,7 @@ const SECTIONS = [
   { id: 'projects', label: 'Projects' },
   { id: 'path', label: 'Education & Highlights' },
   { id: 'contact', label: 'Contact' },
+  { id: 'friends', label: 'Friends' },
 ];
 
 // Keeps sections that can't reach the top of the viewport (the page ends first)

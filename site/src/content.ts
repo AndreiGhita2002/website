@@ -20,5 +20,16 @@ export interface TimelineEntry {
   note: string;
 }
 
+export interface Friend {
+  name: string;
+  href: string;
+}
+
+export const name: string = data.name;
+export const about: { heading: string; paragraphs: string[] } = data.about;
 export const projects: Project[] = data.projects;
 export const timeline: TimelineEntry[] = data.timeline;
+export const friends: Friend[] = data.friends;
+
+/** True for hrefs still waiting for a real URL, like "[PAPER LINK]". */
+export const isPlaceholder = (href: string) => /^\[.*\]$/.test(href);

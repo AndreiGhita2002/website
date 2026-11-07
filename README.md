@@ -25,7 +25,7 @@ To use real images, put them in `site/public/assets/` and set the paths in the J
 - Thumbnail: `"thumb": { ..., "src": "/assets/foo.png", "alt": "..." }`
 - Image slots: `"images": [{ "label": "...", "src": "/assets/foo.png", "alt": "..." }]`
 
-The intro, about and contact copy is in `site/src/App.tsx`.
+Your name, the About section and friends' links are in the same file (`name`, `about`, `friends`). The rest of the intro and the contact copy are in `site/src/App.tsx`. The page title and social preview text are in `site/index.html`.
 
 ## Placeholders to fill in
 

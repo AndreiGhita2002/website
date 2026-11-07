@@ -1,4 +1,13 @@
 {
+  "name": "Andrei Iuliu Ghita",
+  "about": {
+    "heading": "MSci Graduate 2026. Aspiring Software Engineer",
+    "paragraphs": [
+      "I am most interested in concurrency and model inference. Just finished an Integrated Master's in Computing Science at University of Glasgow.",
+      "Interests: inference optimisations, parallelism, graphics programming, language design",
+      "I also like history, cooking, biking and hiking."
+    ]
+  },
   "projects": [
     {
       "id": "reactivepipe",
@@ -136,5 +145,12 @@
     { "when": "[YEARS]", "title": "MSci Computing Science, University of Glasgow", "note": "Integrated Masters. [ADD: classification, key modules]" },
     { "when": "2025", "title": "1st place, GUTS hackathon", "note": "Free to Book challenge, with plane-game." },
     { "when": "[YEAR]", "title": "[ADD: internship or role]", "note": "[ADD: one line on what you did]" }
+  ],
+  "friends": [
+    { "name": "Fraser", "href": "https://frasermiller.dev" },
+    { "name": "Nour", "href": "https://nourelfangary.com" },
+    { "name": "Ben", "href": "https://vyrz.dev" },
+    { "name": "Luke", "href": "https://lukeormiston.com" },
+    { "name": "Mark", "href": "https://marksoftwaredev.com/" }
   ]
 }
