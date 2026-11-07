@@ -1,0 +1,140 @@
+{
+  "projects": [
+    {
+      "id": "reactivepipe",
+      "name": "ReactivePipe",
+      "mark": "RP",
+      "tag": "Euro-Par 2026",
+      "tagColor": { "bg": "#E0A33A", "fg": "#1E3A2F" },
+      "thumb": { "bg": "#1E3A2F", "fg": "#E0A33A", "src": null },
+      "blurb": "Pipeline-parallel inference that adapts when co-located workloads interfere.",
+      "details": [
+        "Static pipeline parallelism splits a model across processes once and assumes the hardware stays quiet. On shared machines, co-located workloads slow individual stages, and the slowest stage sets the pace for the whole pipeline.",
+        "ReactivePipe re-partitions the model across processes when interference appears, keeping 70–87% of its throughput where static pipelines lose half. It was my Master's dissertation and is to appear as a workshop paper at Euro-Par 2026."
+      ],
+      "images": [
+        { "label": "[THROUGHPUT CHART]", "src": null, "alt": "" },
+        { "label": "[ARCHITECTURE DIAGRAM]", "src": null, "alt": "" }
+      ],
+      "tags": ["Python", "PyTorch", "pipeline parallelism", "distributed inference"],
+      "links": [
+        { "label": "GitHub repo", "href": "https://github.com/AndreiGhita2002/reactive-pipe" },
+        { "label": "Paper", "href": "[PAPER LINK]" }
+      ]
+    },
+    {
+      "id": "uxn-on-gpu",
+      "name": "uxn-on-gpu",
+      "mark": "UX",
+      "tag": "BSc thesis",
+      "tagColor": { "bg": "#BFD8B8", "fg": "#1E3A2F" },
+      "thumb": { "bg": "#A63A28", "fg": "#EFE4CB", "src": null },
+      "blurb": "The Uxn virtual machine, executing directly in GPU kernels.",
+      "details": [
+        "Uxn is a small stack-based virtual machine. This project explores running VM execution directly on the GPU, with the interpreter written as Vulkan compute kernels compiled to SPIR-V.",
+        "My bachelor's dissertation. [ADD: the key finding or benchmark result]"
+      ],
+      "images": [
+        { "label": "[SCREENSHOT]", "src": null, "alt": "" },
+        { "label": "[BENCHMARK]", "src": null, "alt": "" }
+      ],
+      "tags": ["C", "Vulkan", "SPIR-V", "GPU compute", "virtual machines"],
+      "links": [
+        { "label": "GitHub repo", "href": "https://github.com/AndreiGhita2002/uxn-on-gpu" },
+        { "label": "Dissertation PDF", "href": "[PDF LINK]" }
+      ]
+    },
+    {
+      "id": "plane-game",
+      "name": "plane-game",
+      "mark": "#1",
+      "tag": "1st · GUTS 2025",
+      "tagColor": { "bg": "#A63A28", "fg": "#EFE4CB" },
+      "thumb": { "bg": "#E0A33A", "fg": "#1E3A2F", "src": null },
+      "blurb": "Hackathon game, winner of the Free to Book challenge.",
+      "details": [
+        "Built over the \"Do you have the GUTS?\" 2025 hackathon, where it won the Free to Book challenge.",
+        "[ADD: what the game is, and what you built in the team]"
+      ],
+      "images": [
+        { "label": "[GAMEPLAY GIF]", "src": null, "alt": "" },
+        { "label": "[SCREENSHOT]", "src": null, "alt": "" }
+      ],
+      "tags": ["TypeScript", "hackathon", "game"],
+      "links": [
+        { "label": "GitHub repo", "href": "https://github.com/AndreiGhita2002/plane-game" },
+        { "label": "Play it", "href": "[DEMO LINK]" }
+      ]
+    },
+    {
+      "id": "llm-discord-bot",
+      "name": "llm-discord-bot",
+      "mark": "AI",
+      "tag": "Side project",
+      "tagColor": { "bg": "#E2D3B2", "fg": "#1E3A2F" },
+      "thumb": { "bg": "#534D41", "fg": "#BFD8B8", "src": null },
+      "blurb": "Discord chatbot running local LLM inference through Ollama.",
+      "details": [
+        "A Discord chatbot backed by a local model through Ollama, so nothing leaves the machine.",
+        "It recalls earlier conversations through semantic memory built on embeddings, and keeps probabilistic summaries of the people it talks to."
+      ],
+      "images": [
+        { "label": "[CHAT SCREENSHOT]", "src": null, "alt": "" },
+        { "label": "[MEMORY DIAGRAM]", "src": null, "alt": "" }
+      ],
+      "tags": ["Python", "Ollama", "embeddings", "LLMs"],
+      "links": [
+        { "label": "GitHub repo", "href": "https://github.com/AndreiGhita2002/llm-discord-bot" }
+      ]
+    },
+    {
+      "id": "xr-pirate-purgatory",
+      "name": "XR Pirate Purgatory",
+      "mark": "XR",
+      "tag": "Team",
+      "tagColor": { "bg": "#E2D3B2", "fg": "#1E3A2F" },
+      "thumb": { "bg": "#1E3A2F", "fg": "#BFD8B8", "src": null },
+      "blurb": "VR escape room where you play a pirate escaping the afterlife.",
+      "details": [
+        "A virtual-reality escape room where you play a pirate trying to escape the afterlife.",
+        "[ADD: team size and what you were responsible for]"
+      ],
+      "images": [
+        { "label": "[VR SCREENSHOT]", "src": null, "alt": "" },
+        { "label": "[TRAILER STILL]", "src": null, "alt": "" }
+      ],
+      "tags": ["Unity", "XR / VR", "team project"],
+      "links": [
+        { "label": "GitHub repo", "href": "https://github.com/UofG-XR-Group3-2025/xr-pirate-purgatory" },
+        { "label": "Video", "href": "[VIDEO LINK]" }
+      ]
+    },
+    {
+      "id": "neuro-arcade",
+      "name": "neuro_arcade",
+      "mark": "NA",
+      "tag": "Team",
+      "tagColor": { "bg": "#E2D3B2", "fg": "#1E3A2F" },
+      "thumb": { "bg": "#BFD8B8", "fg": "#1E3A2F", "src": null },
+      "blurb": "Games platform built for the UofG School of Psychology.",
+      "details": [
+        "A games platform built for the University of Glasgow School of Psychology, as a team project for the Professional Software Development course.",
+        "[ADD: what the platform does and your part in it]"
+      ],
+      "images": [
+        { "label": "[PLATFORM SCREENSHOT]", "src": null, "alt": "" },
+        { "label": "[SCREENSHOT]", "src": null, "alt": "" }
+      ],
+      "tags": ["Django", "React", "JavaScript", "team project"],
+      "links": [
+        { "label": "GitHub repo", "href": "https://github.com/nathanlogie/neuro_arcade" }
+      ]
+    }
+  ],
+  "timeline": [
+    { "when": "2026", "title": "Workshop paper — Euro-Par 2026", "note": "ReactivePipe, from my Master's dissertation." },
+    { "when": "[YEARS]", "title": "MSci Computing Science, University of Glasgow", "note": "Integrated Masters. [ADD: classification, key modules]" },
+    { "when": "2025", "title": "1st place, GUTS hackathon", "note": "Free to Book challenge, with plane-game." },
+    { "when": "[YEAR]", "title": "[ADD: internship or role]", "note": "[ADD: one line on what you did]" }
+  ]
+}
