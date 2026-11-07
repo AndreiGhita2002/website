@@ -25,8 +25,7 @@ export interface Friend {
   href: string;
 }
 
-export const name: string = data.name;
-export const about: { heading: string; paragraphs: string[] } = data.about;
+export const { name, links, sections, ui, intro, contact, about } = data;
 export const projects: Project[] = data.projects;
 export const timeline: TimelineEntry[] = data.timeline;
 export const friends: Friend[] = data.friends;

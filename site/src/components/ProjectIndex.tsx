@@ -1,5 +1,5 @@
 import { useEffect, useState, type CSSProperties } from 'react';
-import { isPlaceholder, type Project } from '../content';
+import { isPlaceholder, ui, type Project } from '../content';
 
 const ANIMATION_MS = 220; // slightly longer than the 200ms CSS transition
 
@@ -77,7 +77,7 @@ function ProjectRow({ project: p, number, open, onToggle }: ProjectRowProps) {
           <span className="row-num">{String(number).padStart(2, '0')}</span>
           <span className="thumb">
             {p.thumb.src
-              ? <img src={p.thumb.src} alt={p.thumb.alt ?? `${p.name} screenshot`} />
+              ? <img src={p.thumb.src} alt={p.thumb.alt ?? p.name} />
               : <span aria-hidden="true">{p.mark}</span>}
           </span>
           <span className="row-text">
@@ -105,13 +105,13 @@ function ProjectRow({ project: p, number, open, onToggle }: ProjectRowProps) {
 
             <div className="panel-side">
               <div className="stack">
-                <span className="side-label">STACK</span>
+                <span className="side-label">{ui.stack}</span>
                 <ul className="stack-tags">
                   {p.tags.map((tag) => <li key={tag}>{tag}</li>)}
                 </ul>
               </div>
               <div className="links">
-                <span className="side-label">LINKS</span>
+                <span className="side-label">{ui.links}</span>
                 <ul>
                   {p.links.map((link) => (
                     <li key={link.label}>

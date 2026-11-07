@@ -1,13 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import { sections as sectionText, ui } from '../content';
 
-const SECTIONS = [
-  { id: 'intro', label: 'Intro' },
-  { id: 'about', label: 'About' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'path', label: 'Education & Highlights' },
-  { id: 'contact', label: 'Contact' },
-  { id: 'friends', label: 'Friends' },
-];
+// Page order; the names come from the content file.
+const SECTIONS = (['intro', 'about', 'projects', 'path', 'contact', 'friends'] as const)
+  .map((id) => ({ id, label: sectionText[id].name }));
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 
@@ -20,7 +16,6 @@ export function ScrollRail() {
   // -1 until hydrated: the prerendered page must not show a pill that never moves.
   const [active, setActive] = useState(-1);
   const railRef = useRef<HTMLElement>(null);
-  const mirrorFillRef = useRef<HTMLDivElement>(null);
   const topbarFillRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -69,7 +64,6 @@ export function ScrollRail() {
         fillOf(segment).style.transform = `scaleY(${fill})`;
       });
 
-      mirrorFillRef.current!.style.transform = `scaleY(${progress})`;
       topbarFillRef.current!.style.transform = `scaleX(${progress})`;
     };
 
@@ -122,7 +116,7 @@ export function ScrollRail() {
     <>
       <div className="topbar" aria-hidden="true"><div className="fill" ref={topbarFillRef} /></div>
 
-      <nav className="rail" aria-label="Sections" ref={railRef}>
+      <nav className="rail" aria-label={ui.sectionsNav} ref={railRef}>
         <div className="seg seg--cap" aria-hidden="true"><div className="fill" /></div>
         {SECTIONS.map((section, i) => (
           <RailEntry key={section.id} index={i} active={active} {...section} />
@@ -130,7 +124,7 @@ export function ScrollRail() {
       </nav>
 
       <div className="mirror" aria-hidden="true">
-        <div className="mirror-track"><div className="fill" ref={mirrorFillRef} /></div>
+        <div className="mirror-track" />
       </div>
     </>
   );

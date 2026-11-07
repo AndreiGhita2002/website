@@ -1,5 +1,41 @@
 {
   "name": "Andrei Iuliu Ghita",
+  "site": {
+    "title": "Andrei's Website",
+    "description": "Andrei's Website. I like making computers go fast.",
+    "socialTitle": "Andrei's Website",
+    "socialDescription": "I like making computers go fast.",
+    "socialImage": "https://andreig.dev/assets/og.png"
+  },
+  "links": {
+    "cv": { "label": "Download CV", "href": "/assets/Andrei_Ghita_CV.pdf" },
+    "github": { "label": "GitHub", "href": "https://github.com/AndreiGhita2002" },
+    "linkedin": { "label": "LinkedIn", "href": "https://www.linkedin.com/in/andrei-iuliu-ghita-dev" },
+    "email": { "label": "andrei.ghita2002@gmail.com", "href": "mailto:andrei.ghita2002@gmail.com" }
+  },
+  "sections": {
+    "intro": { "name": "Intro", "label": "SYSTEMS & ML INFRASTRUCTURE ENGINEER" },
+    "about": { "name": "About", "label": "01 — ABOUT" },
+    "projects": { "name": "Projects", "label": "02 — PROJECTS" },
+    "path": { "name": "Timeline", "label": "03 — TIMELINE" },
+    "contact": { "name": "Contact", "label": "04 — CONTACT" },
+    "friends": { "name": "Friends", "label": "05 — FRIENDS" }
+  },
+  "ui": {
+    "projectCount": "{count} entries",
+    "expandHint": "click to expand",
+    "stack": "STACK",
+    "links": "LINKS",
+    "sectionsNav": "Sections"
+  },
+  "intro": {
+    "line": "MSci Computing Science, University of Glasgow. I like making computers go fast.",
+    "photo": "/assets/face.png",
+    "photoAlt": "Portrait of Andrei Iuliu Ghita"
+  },
+  "contact": {
+    "heading": "Open to systems and ML-infra roles."
+  },
   "about": {
     "heading": "MSci Graduate 2026. Aspiring Software Engineer",
     "paragraphs": [

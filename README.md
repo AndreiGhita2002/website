@@ -25,13 +25,31 @@ To use real images, put them in `site/public/assets/` and set the paths in the J
 - Thumbnail: `"thumb": { ..., "src": "/assets/foo.png", "alt": "..." }`
 - Image slots: `"images": [{ "label": "...", "src": "/assets/foo.png", "alt": "..." }]`
 
-Your name, the About section and friends' links are in the same file (`name`, `about`, `friends`). The rest of the intro and the contact copy are in `site/src/App.tsx`. The page title and social preview text are in `site/index.html`.
+All the site's text and links are in that same file:
+
+- `name`: your name
+- `site`: browser tab title and social preview text
+- `links`: CV, GitHub, LinkedIn and email (label and URL)
+- `sections`: each section's `name` on the scroll rail and its `label` on the page
+- `ui`: small labels such as `STACK` and the project count
+- `intro`, `about`, `contact`, `timeline`, `friends`: each section's content
+
+To replace the CV, put the new PDF in `site/public/assets/` and update `links.cv.href`. Only the `+`, `−`, `↗` and `·` symbols and the numbers on rows and the rail stay in the code.
+
+## Removing your phone number from a CV
+
+Everything in `site/public/` is published, so keep the original CV somewhere else and publish a stripped copy. From the repo root:
+
+```sh
+uv run site/scripts/strip_cv_phone.py path/to/original.pdf site/public/assets/Andrei_Ghita_CV.pdf
+```
+
+This deletes the number from the PDF rather than covering it, and writes nothing if a number survives. It's written for LaTeX PDFs, so run it again whenever you recompile the CV. Requires [uv](https://docs.astral.sh/uv/).
 
 ## Placeholders to fill in
 
 Files to add to `site/public/assets/`:
 
-- [ ] `Andrei-Ghita-CV.pdf`: the Download CV button already points here, so it's broken until the file exists.
 - [ ] `og.png`: the social preview image. The current file is a generated stand-in (1200×630).
 
 In `site/src/content/projects.json`:
