@@ -2,7 +2,7 @@
 
 <a> andreig.dev </a>
 
-The current site is in `site/` (React, TypeScript, Vite). The old Create React App site is still at the repo root (`src/`, `public/`, `package.json`). The new site doesn't use any of it.
+The current site is in `site/` (React, TypeScript, Vite). The old Create React App site is in `old/`, with its own `package.json`. The new site doesn't use any of it.
 
 ## Running it
 

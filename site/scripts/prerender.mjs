@@ -3,9 +3,11 @@
 import { readFile, rm, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
+/** @param {string} relative */
 const path = (relative) => fileURLToPath(new URL(relative, import.meta.url));
 
-const { render } = await import('../dist-ssr/entry-server.js');
+// A computed path, because this bundle only exists partway through `npm run build`.
+const { render } = await import(new URL('../dist-ssr/entry-server.js', import.meta.url).href);
 const template = await readFile(path('../dist/index.html'), 'utf8');
 
 if (!template.includes('<!--app-->')) {

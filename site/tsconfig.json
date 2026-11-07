@@ -12,7 +12,9 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["vite/client"]
+    "allowJs": true,
+    "checkJs": true,
+    "types": ["vite/client", "node"]
   },
-  "include": ["src"]
+  "include": ["src", "scripts", "vite.config.ts"]
 }
