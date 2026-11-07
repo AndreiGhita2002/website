@@ -5,9 +5,9 @@ import {createRoot} from "react-dom/client";
 // import {OldHomePage} from "./components/OldHomePage";
 // import {PlanetsCanvas} from "./components/Planets";
 import {HomePage} from "./components/HomePage";
-import {DraggableCard} from "./components/DraggableCard";
-import {DropZone} from "./components/DropZone";
-import {CardRoot} from "./components/CardRoot";
+// import {DraggableCard} from "./components/DraggableCard";
+// import {DropZone} from "./components/DropZone";
+// import {CardRoot} from "./components/CardRoot";
 
 const router = createBrowserRouter([
     {
@@ -16,8 +16,8 @@ const router = createBrowserRouter([
             <div>
                 {/*<OldHomePage />*/}
                 {/*<PlanetsCanvas />*/}
-                {/*<HomePage/>*/}
-              <CardRoot/>
+                <HomePage/>
+                {/*<CardRoot/>*/}
             </div>
         )
     },

@@ -3,19 +3,26 @@ import React from "react";
 
 export function HomePage() {
     return (
-        <div className='centre'>
-            <img src='/face.jpeg' alt='selfie' className='face'/>
+        <div className='container'>
+            <div className="sidebar">
+                <div className="face-container">
+                    <img src={'face.png'} alt='selfie' className='face'/>
+                </div>
+                <br/>
+                {/*Home*/}
+            </div>
+
             <div className='content'>
-                <div className='left'>
+                <div className='right'>
                     <h1>Andrei's Page</h1>
 
-                    I like programming. <br/>
+                    Aspiring software developer. I am most interested in concurrency and model inference. <br/>
 
-                    4th year university student at University of Glasgow <br/>
+                    Just finished an Integrated Master's in Computing Science at University of Glasgow. <br/>
 
                     <br/>
 
-                    Interests: graphics programming, data science, networks <br/>
+                    Interests: inference optimisations, parallelism, graphics programming, language design <br/>
 
                     <br/>
 
@@ -29,7 +36,8 @@ export function HomePage() {
 
                     <h3>Pals:</h3>
                     Fraser <a href={"https://frasermiller.dev"}>frasermiller.dev</a> <br/>
-                    Nour <a href={"https://nourl.dev"}>nourl.dev</a> <br/>
+                    {/*TODO: update nour's url*/}
+                    Nour <a href={"----"}>----</a> <br/>
                     Ben <a href={"https://vyrz.dev"}>vyrz.dev</a> <br/>
                     Luke <a href={"https://lukeormiston.com"}>lukeormiston.com</a> <br/>
                     Mark <a href={"https://marksoftwaredev.com/"}>marksoftwaredev.com/</a> <br/>

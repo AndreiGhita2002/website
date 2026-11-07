@@ -3,38 +3,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
 
 :root {
-    --text: black;
-    --background: white;
+    /*--text: black;*/
+    /*--background: white;*/
     /*justify-content: safe center;*/
     font-family: "JetBrains Mono", sans-serif;
 }
 
-.centre {
+.container {
     margin: auto;
     width: 60%;
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+    /*height: 100vh;*/
 }
 
-.face {
-    border: 5px solid;
-    width: 100%;
-    /*height: auto;*/
-    object-fit: fill;
+.sidebar {
+    border-right: 2px groove #ccc;
+    /*padding-right: 1em;*/
+    margin-right: 1em;
+    width: 20%;
 }
 
 .content {
-    width: 100%;
-    border: 5px solid;
-    display: flex;
-    flex-direction: row;
+    /*padding: 13px;*/
+    width: 80%;
+    /*border: 5px solid;*/
 }
 
-.left {
-    padding: 13px;
+.face-container {
+    border-bottom: 2px groove #ccc;
+    /*padding-bottom: 1em;*/
+    margin-bottom: 1em;
 }
 
-.right {
-    padding: 13px;
+.face {
+    /*border: 1px #ccc solid;*/
+    width: 96%;
+    /*height: auto;*/
+    object-fit: fill;
 }
 
 /*Fonts:*/
