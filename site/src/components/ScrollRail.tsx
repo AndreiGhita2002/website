@@ -9,15 +9,12 @@ const SECTIONS = [
   { id: 'friends', label: 'Friends' },
 ];
 
-// Keeps sections that can't reach the top of the viewport (the page ends first)
-// from sharing a mark at 100%, which would stop them ever becoming current.
-const MIN_MARK_GAP = 0.03;
-
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 
 /**
- * Fills are written straight to the DOM from the scroll handler, so scrolling
- * only re-renders React when the current section changes.
+ * The selected section is the one at the middle of the viewport. Fills are
+ * written straight to the DOM from the scroll handler, so scrolling only
+ * re-renders React when the selected section changes.
  */
 export function ScrollRail() {
   // -1 until hydrated: the prerendered page must not show a pill that never moves.
@@ -33,24 +30,42 @@ export function ScrollRail() {
     const last = sections.length - 1;
 
     let max = 1;
-    let marks: number[] = sections.map(() => 0);
-    let unreachable: boolean[] = sections.map(() => false);
+    let half = 0;
+    let sweep = 1;
+    let startLift = 0;
+    let endPush = 0;
+    let tops: number[] = [];
+    let landings: number[] = [];
 
     const paint = () => {
-      const progress = clamp(window.scrollY / max, 0, 1);
+      const y = window.scrollY;
+      const progress = clamp(y / max, 0, 1);
 
-      let current = marks.reduce((a, m, i) => (progress + 0.002 >= m ? i : a), 0);
-      // Clicking an unreachable section lands at the page bottom; keep it current there.
+      // The viewport's middle, adjusted near the page ends only when the first or
+      // last section could otherwise never be selected (see measure).
+      const probe =
+        y + half
+        - startLift * (1 - clamp(y / sweep, 0, 1))
+        + endPush * (1 - clamp((max - y) / sweep, 0, 1));
+
+      let current = tops.reduce((a, top, i) => (probe >= top ? i : a), 0);
+      let position = probe;
+
+      // Sitting where a label click lands: that section stays selected, even if
+      // a different one is at the middle of the viewport.
       const target = SECTIONS.findIndex((s) => `#${s.id}` === window.location.hash);
-      if (progress >= 0.999 && target >= 0 && unreachable[target]) current = target;
+      if (target >= 0 && Math.abs(y - landings[target]) < 2) {
+        current = target;
+        position = tops[target];
+      }
       setActive(current);
 
       fillOf(lead).style.transform = `scaleY(${current > 0 || progress > 0 ? 1 : 0.5})`;
       segments.forEach((segment, i) => {
         const fill =
           i < last
-            ? clamp((progress - marks[i]) / Math.max(0.0001, marks[i + 1] - marks[i]), 0, 1)
-            : progress >= 0.999 ? 1 : 0;
+            ? clamp((position - tops[i]) / Math.max(1, tops[i + 1] - tops[i]), 0, 1)
+            : current === last && progress >= 0.999 ? 1 : 0;
         fillOf(segment).style.transform = `scaleY(${fill})`;
       });
 
@@ -60,16 +75,20 @@ export function ScrollRail() {
 
     const measure = () => {
       max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-      const raw = sections.map((s) => (s.getBoundingClientRect().top + window.scrollY - 24) / max);
-      unreachable = raw.map((r) => r >= 1);
-      marks = raw.map((r) => clamp(r, 0, 1));
-      marks[0] = 0;
-      for (let i = last - 1; i > 0; i--) marks[i] = Math.min(marks[i], marks[i + 1] - MIN_MARK_GAP);
+      half = window.innerHeight / 2;
+      sweep = Math.max(1, Math.min(half, max));
 
-      segments.forEach((segment, i) => {
-        const span = i < last ? Math.max(0.02, marks[i + 1] - marks[i]) : 0.03;
-        segment.style.flexGrow = String(span * 100);
-      });
+      const rects = sections.map((s) => s.getBoundingClientRect());
+      tops = rects.map((r) => r.top + window.scrollY);
+      landings = sections.map((s, i) =>
+        clamp(tops[i] - parseFloat(getComputedStyle(s).scrollMarginTop), 0, max));
+
+      // On a tall viewport the second section can already be at the middle at the
+      // top of the page, and the last ones may never reach it before the page ends.
+      startLift = half >= tops[1] ? half - (tops[0] + rects[0].height / 2) : 0;
+      const middleAtEnd = max + half;
+      endPush = tops[last] > middleAtEnd ? tops[last] + rects[last].height / 2 - middleAtEnd : 0;
+
       paint();
     };
 
@@ -104,7 +123,7 @@ export function ScrollRail() {
       <div className="topbar" aria-hidden="true"><div className="fill" ref={topbarFillRef} /></div>
 
       <nav className="rail" aria-label="Sections" ref={railRef}>
-        <div className="seg seg--lead" aria-hidden="true"><div className="fill" /></div>
+        <div className="seg seg--cap" aria-hidden="true"><div className="fill" /></div>
         {SECTIONS.map((section, i) => (
           <RailEntry key={section.id} index={i} active={active} {...section} />
         ))}
@@ -133,10 +152,14 @@ function RailEntry({ id, label, index, active }: RailEntryProps) {
         href={`#${id}`}
         aria-current={isCurrent ? 'location' : undefined}
       >
-        <span className="rail-num">{String(index).padStart(2, '0')}</span>{' '}
-        <span className="rail-name">{label}</span>
+        <span className="rail-text">
+          <span className="rail-num">{String(index).padStart(2, '0')}</span>{' '}
+          <span className="rail-name">{label}</span>
+        </span>
       </a>
-      <div className="seg" aria-hidden="true"><div className="fill" /></div>
+      <div className={`seg${index === SECTIONS.length - 1 ? ' seg--cap' : ''}`} aria-hidden="true">
+        <div className="fill" />
+      </div>
     </>
   );
 }

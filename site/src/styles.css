@@ -15,6 +15,7 @@
   --display: 'Bricolage Grotesque', sans-serif;
   --body: 'Inter', system-ui, sans-serif;
   --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --rail-font: 'Roboto Mono', ui-monospace, monospace;
 
   --rail-w: 112px;
 }
@@ -118,8 +119,9 @@ section, header { scroll-margin-top: 24px; }
   overflow: hidden;
 }
 
+/* Segments between labels share the free space equally; the two ends are fixed caps. */
 .seg { flex: 1 1 0; min-height: 18px; margin: 8px 0; }
-.seg--lead { flex: 0 0 24px; min-height: 24px; }
+.seg--cap { flex: 0 0 24px; min-height: 24px; }
 .mirror-track { height: 100%; }
 
 .fill {
@@ -136,13 +138,14 @@ section, header { scroll-margin-top: 24px; }
   writing-mode: vertical-rl;
   white-space: nowrap;
   padding: 14px 9px;
-  border-radius: 999px;
-  font-family: var(--mono);
+  border-radius: 4px;
+  font-family: var(--rail-font);
   font-size: 13px;
   line-height: 1.2;
   letter-spacing: .06em;
   text-decoration: none;
   color: var(--umber);
+  transition: transform 200ms ease-out, color 150ms ease-out;
 }
 
 /* The pill is narrower than 44px; this widens the hit area without changing it. */
@@ -158,21 +161,38 @@ section, header { scroll-margin-top: 24px; }
 .rail-link:hover { color: var(--terracotta); }
 
 .rail-link[aria-current] {
-  background: var(--forest);
-  color: var(--cream);
-  font-weight: 500;
-  box-shadow: 0 0 0 3px rgba(224, 163, 58, .55);
+  color: var(--forest);
+  /*font-style: italic;*/
+  /*font-weight: 100;*/
+  /* Thin italic is narrower per character; this keeps the label's length, so others don't move. */
+  /*letter-spacing: .0732em;*/
+  /* Page colour, invisible except where it stops the rail line running through the brackets. */
+  background: var(--cream);
+  /* A transform, so the selected label grows without moving the others. */
+  transform: scale(1.12);
+  z-index: 1;
 }
 
-/* 75% umber on cream falls below 4.5:1, so upcoming numbers stay at full opacity. */
-.rail-link.is-passed .rail-num,
-.rail-link[aria-current] .rail-num { opacity: .75; }
+/* The brackets sit in the label's padding, so they don't move the other labels either. */
+.rail-text { position: relative; display: inline-block; }
 
-/* At full spacing the rail's labels and minimum segments need about 1086px of height. */
-@media (max-height: 1090px) {
-  .rail { padding: 16px 0; }
+.rail-link[aria-current] .rail-text::before,
+.rail-link[aria-current] .rail-text::after {
+  position: absolute;
+  left: 0;
+}
+
+.rail-link[aria-current] .rail-text::before { content: '['; bottom: 100%; }
+.rail-link[aria-current] .rail-text::after { content: ']'; top: 100%; }
+
+/* 75% umber on cream falls below 4.5:1, so upcoming numbers stay at full opacity. */
+.rail-link.is-passed .rail-num { opacity: .75; }
+
+/* At full spacing the rail's labels and minimum segments need about 1092px of height. */
+@media (max-height: 1095px) {
+  .rail { padding: 12px 0; }
   .seg { margin: 4px 0; min-height: 8px; }
-  .seg--lead { flex-basis: 16px; min-height: 16px; }
+  .seg--cap { flex-basis: 16px; min-height: 16px; }
   .rail-link { padding: 10px 9px; }
 }
 
@@ -599,5 +619,5 @@ a.link:hover { color: var(--terracotta); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .panel, .is-open > .panel, .btn { transition: none; }
+  .panel, .is-open > .panel, .btn, .rail-link { transition: none; }
 }
