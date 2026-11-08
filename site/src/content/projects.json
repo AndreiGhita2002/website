@@ -183,10 +183,13 @@
     { "when": "2025", "title": "1st place, GUTS hackathon", "note": "Free to Book challenge, with plane-game." }
   ],
   "friends": [
-    { "name": "Fraser", "href": "https://frasermiller.dev" },
-    { "name": "Nour", "href": "https://nourelfangary.com" },
-    { "name": "Ben", "href": "https://vyrz.dev" },
-    { "name": "Luke", "href": "https://lukeormiston.com" },
-    { "name": "Mark", "href": "https://marksoftwaredev.com/" }
+    { "name": "Fraser Miller", "href": "https://frasermiller.dev" },
+    { "name": "Nour Elfangary", "href": "https://nourelfangary.com" },
+    { "name": "Ben Parsons-Willis", "href": "https://vyrz.dev" },
+    { "name": "Luke Ormiston", "href": "https://lukeormiston.com" },
+    { "name": "Mark Turnbull", "href": "https://marksoftwaredev.com/" },
+    { "name":  "Stefan Vučković", "href":  "https://stefvuck.dev/"},
+    { "name":  "Andrei Boghean", "href":  "https://andreiboghean.com/"},
+    { "name":  "Jackson Dam", "href":  "https://jacksondam.com/"}
   ]
 }
